@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, SyntheticEvent } from 'react';
 import { ImageSourcePropType, StyleProp, ViewStyle } from 'react-native';
-declare const RNNaverMapView: any;
+declare const RNNaverMapView: import("react-native").HostComponent<unknown>;
 export interface Coord {
     latitude: number;
     longitude: number;
@@ -104,6 +104,7 @@ export interface NaverMapViewProps {
     stopGesturesEnabled?: boolean;
     liteModeEnabled?: boolean;
     useTextureView?: boolean;
+    children?: Element;
 }
 export default class NaverMapView extends Component<NaverMapViewProps, {}> {
     ref?: RNNaverMapView;
@@ -122,14 +123,14 @@ export default class NaverMapView extends Component<NaverMapViewProps, {}> {
     setLayerGroupEnabled: (group: LayerGroup, enabled: boolean) => void;
     showsMyLocationButton: (show: boolean) => void;
     private dispatchViewManagerCommand;
-    handleOnCameraChange: (event: React.SyntheticEvent<{}, {
+    handleOnCameraChange: (event: SyntheticEvent<{}, {
         latitude: number;
         longitude: number;
         zoom: number;
         contentsRegion: [Coord, Coord, Coord, Coord, Coord];
         coveringRegion: [Coord, Coord, Coord, Coord, Coord];
     }>) => void;
-    handleOnMapClick: (event: React.SyntheticEvent<{}, {
+    handleOnMapClick: (event: SyntheticEvent<{}, {
         x: number;
         y: number;
         latitude: number;
