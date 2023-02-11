@@ -140,6 +140,12 @@ RCT_CUSTOM_VIEW_PROPERTY(stopGesturesEnabled, BOOL, RNNaverMapView)
   view.mapView.stopGestureEnabled = [json boolValue];
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(logoMargin, UIEdgeInsets, RNNaverMapView)
+{
+  if (json == nil) return;
+  view.mapView.logoMargin = [RCTConvert UIEdgeInsets: json];
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(tilt, BOOL, RNNaverMapView)
 {
   // TODO
