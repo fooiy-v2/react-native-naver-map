@@ -165,7 +165,7 @@ public class RNNaverMapView extends MapView implements OnMapReadyCallback, Naver
 
     @Override
     public void setLocationTrackingMode(int mode) {
-        getMapAsync(e -> naverMap.setLocationTrackingMode(LocationTrackingMode.values()[mode]));
+        getMapAsync(e -> naverMap.setLocationTrackingMode(LocationTrackingMode.Follow));
     }
 
     @Override

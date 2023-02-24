@@ -129,7 +129,7 @@ public class RNNaverMapViewManager extends ViewGroupManager<RNNaverMapViewContai
         mapView.setBuildingHeight(height);
     }
 
-    @ReactProp(name = "locationTrackingMode", defaultInt = 0)
+    @ReactProp(name = "setLocationTrackingMode", defaultInt = 0)
     public void setLocationTrackingMode(RNNaverMapViewContainer mapView, int mode) {
         mapView.setLocationTrackingMode(mode);
     }
